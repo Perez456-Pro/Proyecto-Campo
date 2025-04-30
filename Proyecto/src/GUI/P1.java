@@ -29,6 +29,7 @@ public class P1 extends JFrame implements ActionListener {
 	private JScrollPane scrollPane;
 	private JTextArea textArea;
 	private Contar contar = new Contar();
+	private JButton btnNewButton_2;
 
 	/**
 	 * Launch the application.
@@ -77,13 +78,13 @@ public class P1 extends JFrame implements ActionListener {
 		{
 			btnNewButton = new JButton("Ingresar Perro");
 			btnNewButton.addActionListener(this);
-			btnNewButton.setBounds(31, 90, 135, 23);
+			btnNewButton.setBounds(10, 90, 135, 23);
 			contentPane.add(btnNewButton);
 		}
 		{
 			btnNewButton_1 = new JButton("Sacar Perro");
 			btnNewButton_1.addActionListener(this);
-			btnNewButton_1.setBounds(244, 90, 127, 23);
+			btnNewButton_1.setBounds(152, 90, 127, 23);
 			contentPane.add(btnNewButton_1);
 		}
 		{
@@ -95,8 +96,17 @@ public class P1 extends JFrame implements ActionListener {
 				scrollPane.setViewportView(textArea);
 			}
 		}
+		{
+			btnNewButton_2 = new JButton("Reiniciar");
+			btnNewButton_2.addActionListener(this);
+			btnNewButton_2.setBounds(289, 90, 135, 23);
+			contentPane.add(btnNewButton_2);
+		}
 	}
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnNewButton_2) {
+			do_btnNewButton_2_actionPerformed(e);
+		}
 		if (e.getSource() == btnNewButton_1) {
 			do_btnNewButton_1_actionPerformed(e);
 		}
@@ -129,6 +139,11 @@ public class P1 extends JFrame implements ActionListener {
 	    } else {
 	        textArea.setText("No hay perros para retirar.\n");
 	    }
+	}
+	protected void do_btnNewButton_2_actionPerformed(ActionEvent e) {
+		contar.reiniciar(); 
+		txtCantidad.setText("0");
+		textArea.setText("Todos los perros han sido eliminados.\n");
 	}
 	}
 	

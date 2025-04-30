@@ -19,6 +19,11 @@ public class Contar {
         }
         return false; 
     }
+    
+
+	public void reiniciar() {
+		cantidadPerros = 0;
+	}
 
     public int getCantidad() {
         return cantidadPerros;
